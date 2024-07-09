@@ -15,7 +15,7 @@ EOF
 python -m pip install --no-deps -v "${SRC_DIR}/python"
 
 BUILD_DIR="${SRC_DIR}/extern/pygsw/build"
-cmake -S "${SRC_DIR}/extern/pygsw" -B "${BUILD_DIR}" -DCMAKE_BUILD_TYPE=Release -DPython3_EXECUTABLE="${PYTHON}" ${CMAKE_PLATFORM_FLAGS[@]}
+cmake ${CMAKE_ARGS} -S "${SRC_DIR}/extern/pygsw" -B "${BUILD_DIR}" -DCMAKE_BUILD_TYPE=Release -DPython3_EXECUTABLE="${PYTHON}" ${CMAKE_PLATFORM_FLAGS[@]}
 cmake --build "${BUILD_DIR}" --target pygsw_wheel --config Release --parallel ${CPU_COUNT}
 cp -rv "${BUILD_DIR}/pygsw" "${SP_DIR}/pygetm/pygsw"
 
