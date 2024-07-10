@@ -1,5 +1,5 @@
 {% set version = "0.9.0" %}
-{% set build = 1 %}
+{% set build = 2 %}
 
 package:
   name: pygetm
@@ -13,6 +13,10 @@ source:
 build:
   number: {{ build }}
   skip: True   # [win]
+  entry_points:
+    - pygetm-subdiv = pygetm.subdiv:main
+    - pygetm-test-scaling = pygetm.parallel:test_scaling_command
+    - pygetm-compare-nc = pygetm.util.compare_nc:compare_command
 
 requirements:
   build:
