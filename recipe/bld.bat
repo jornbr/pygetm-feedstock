@@ -6,6 +6,7 @@ echo compiler=gfortran
 ) > "%SRC_DIR%\python\setup.cfg"
 
 set CFLAGS=-DMS_WIN64
+set CMAKE_BUILD_PARALLEL_LEVEL=%CPU_COUNT%
 
 python -m pip install --no-deps -v "%SRC_DIR%\python"
 if errorlevel 1 exit /b 1
