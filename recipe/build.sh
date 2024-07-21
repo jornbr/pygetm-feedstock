@@ -12,6 +12,8 @@ cat > "$SRC_DIR/python/setup.cfg" << EOF
 cmake_opts=-DPython3_EXECUTABLE="${PYTHON}" ${CMAKE_PLATFORM_FLAGS[@]}
 EOF
 
+export CMAKE_BUILD_PARALLEL_LEVEL=${CPU_COUNT}
+
 python -m pip install --no-deps -v "${SRC_DIR}/python"
 
 BUILD_DIR="${SRC_DIR}/extern/pygsw/build"
