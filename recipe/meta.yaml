@@ -1,5 +1,5 @@
-{% set version = "0.9.0" %}
-{% set build = 3 %}
+{% set version = "0.9.1" %}
+{% set build = 0 %}
 
 package:
   name: pygetm
@@ -8,11 +8,11 @@ package:
 source:
   #git_url: https://github.com/BoldingBruggeman/getm-rewrite.git
   url: https://github.com/BoldingBruggeman/getm-rewrite/releases/download/v{{ version }}/code.tar.gz
-  sha256: a147df379a5afea9d2198ac6ac240386eb3f4ff34957b7303c35f432e23fb63f
+  sha256: 1673cc98bf0d660deb3a00b1c077cc93d5285c6ce717ded2f270cbcdca00e1af
 
 build:
   number: {{ build }}
-  #skip: True   # [win]
+  #skip: true  # [win]
   entry_points:
     - pygetm-subdiv = pygetm.subdiv:main
     - pygetm-test-scaling = pygetm.parallel:test_scaling_command
